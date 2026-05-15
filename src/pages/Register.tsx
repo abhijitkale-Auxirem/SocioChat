@@ -35,7 +35,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#070b18]" style={{ backgroundImage: "url('/assets/auth-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="min-h-screen flex bg-[#070b18]" style={{ backgroundColor: "#0f172a", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-[#070b18]/80 backdrop-blur-sm" />
       <div className="relative w-full flex items-center justify-center px-4 py-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="w-full max-w-lg">

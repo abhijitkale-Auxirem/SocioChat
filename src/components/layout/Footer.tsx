@@ -13,7 +13,7 @@ const FOOTER_LINKS = {
     { label: 'Pricing', path: '/pricing' },
     { label: 'Communities', path: '/communities' },
     { label: 'Creator Tools', path: '/features#creator' },
-    { label: 'Business', path: '/features#business' },
+    { label: 'Business', path: '/features#creator' },
   ],
   Company: [
     { label: 'About Us', path: '/about' },
@@ -51,6 +51,11 @@ const STATS = [
   { value: '850K+', label: 'Communities', icon: MessageCircle },
   { value: '99.9%', label: 'Uptime', icon: Shield },
   { value: '₹84Cr+', label: 'Creator Earnings', icon: Heart },
+];
+
+const STORE_LINKS = [
+  { label: 'App Store', href: 'https://apps.apple.com/app/idYOUR_APP_ID' },
+  { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.sociochat' },
 ];
 
 const stagger = {
@@ -185,7 +190,7 @@ export default function Footer() {
               {[
                 { Icon: Mail, text: 'hello@sociochat.in', href: 'mailto:hello@sociochat.in' },
                 { Icon: Phone, text: '+91 80000 00000', href: 'tel:+918000000000' },
-                { Icon: MapPin, text: '12th Floor, DLF Cyber City, Gurugram, Haryana', href: null },
+                { Icon: MapPin, text: 'Dharshiv, Maharashtra', href: null },
               ].map(({ Icon, text, href }) => (
                 <motion.div key={text} whileHover={{ x: 4 }} className="flex items-start gap-3">
                   <div className="w-7 h-7 rounded-lg bg-indigo-400/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -271,16 +276,19 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex gap-3">
-            {['App Store', 'Google Play'].map(store => (
-              <motion.button
-                key={store}
+            {STORE_LINKS.map(store => (
+              <motion.a
+                key={store.label}
+                href={store.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-2 px-4 py-2.5 glass rounded-xl text-sm text-gray-300 hover:text-white border border-white/10 hover:border-indigo-400/30 transition-all"
               >
                 <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
-                {store}
-              </motion.button>
+                {store.label}
+              </motion.a>
             ))}
           </div>
         </motion.div>

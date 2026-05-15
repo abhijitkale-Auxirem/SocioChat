@@ -271,17 +271,17 @@ export default function Navbar() {
                     Login
                   </Link>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <div>
                   <Link
-                    to="/register"
-                    className="relative px-5 py-2 text-sm font-semibold text-white gradient-primary rounded-xl shadow-lg shadow-indigo-500/40"
-                  >
-                    <span className="flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      Get Started
-                    </span>
-                  </Link>
-                </motion.div>
+  to="/register"
+  className="px-5 py-2 text-sm font-semibold text-white transition-transform duration-300 hover:scale-105 active:scale-95"
+>
+  <span className="flex items-center gap-1.5">
+    <Sparkles className="w-3.5 h-3.5" />
+    Get Started
+  </span>
+</Link>
+                </div>
               </div>
             )}
 
