@@ -18,7 +18,7 @@ export default function Accessibility() {
               ['Screen Reader Support', 'SocioChat is designed to be compatible with major screen readers including NVDA, VoiceOver, and TalkBack.'],
               ['Keyboard Navigation', 'All features of SocioChat are accessible via keyboard navigation without requiring a mouse.'],
               ['Color & Contrast', 'We maintain minimum 4.5:1 color contrast ratios for all text content across the platform.'],
-              ['Feedback', 'If you experience any accessibility barriers, please contact us at accessibility@sociochat.in'],
+              ['Feedback', 'If you experience any accessibility barriers, please contact us at accessibility@sociochat.com'],
             ].map(([title, content]) => (
               <div key={title}>
                 <h2 className="text-lg font-bold text-white mb-2 font-['Space_Grotesk']">{title}</h2>

@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PricingSection from '@/components/features/PricingSection';
 import { staggerContainer, fadeInUp, viewportOptions } from '@/lib/animations';
-import { Check, X } from 'lucide-react';
+import { Check, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 const COMPARISON = [
   { feature: 'Messaging', free: true, pro: true, creator: true },
@@ -18,19 +19,11 @@ const COMPARISON = [
 ];
 
 export default function Pricing() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="bg-[#070b18]">
       <Navbar />
-      <section className="pt-32 pb-16 text-center relative overflow-hidden">
-        <div className="absolute top-20 left-1/3 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl" />
-        <div className="max-w-3xl mx-auto px-4 relative">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-6">Transparent Pricing</span>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 font-['Space_Grotesk']">Simple, <span className="gradient-text">Honest Pricing</span></h1>
-            <p className="text-xl text-gray-400">No hidden fees. No surprises. Start free and upgrade as you grow. All prices in Indian Rupees.</p>
-          </motion.div>
-        </div>
-      </section>
+      
 
       <PricingSection />
 
@@ -68,16 +61,24 @@ export default function Pricing() {
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4 font-['Space_Grotesk']">Frequently Asked <span className="gradient-text">Questions</span></h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
             {[
               ['Can I change plans anytime?', 'Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately.'],
               ['Is there a free trial for paid plans?', 'Yes, we offer a 14-day free trial for Pro and Creator plans — no credit card required.'],
               ['How does community monetization work?', 'Creators can charge members for exclusive communities, receive tips, and run sponsored content.'],
-              ['What payment methods do you accept?', 'We accept UPI, Net Banking, all major credit/debit cards, and popular Indian payment apps.'],
-            ].map(([q, a]) => (
-              <div key={q} className="p-6 glass-dark rounded-2xl">
-                <h3 className="text-base font-semibold text-white mb-2 font-['Space_Grotesk']">{q}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{a}</p>
+              ['What payment methods do you accept?', 'We accept all major credit/debit cards, PayPal, and popular payment apps worldwide.'],
+            ].map(([q, a], i) => (
+              <div key={q} className="glass-dark rounded-2xl overflow-hidden">
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors">
+                  <span className="text-base font-medium text-white pr-4">{q}</span>
+                  {openFaq === i ? <ChevronUp className="w-5 h-5 text-indigo-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />}
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-400 leading-relaxed">{a}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

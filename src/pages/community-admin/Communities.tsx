@@ -78,7 +78,7 @@ export default function MyCommunities() {
             <img src={c.image} alt={c.name} className="w-16 h-14 object-cover rounded-xl shrink-0" />
             <div className="flex-1 min-w-0">
               <h3 className="text-base font-semibold text-white font-['Space_Grotesk']">{c.name}</h3>
-              <p className="text-xs text-gray-400">{c.members.toLocaleString('en-IN')} members · {c.category} · {c.type}</p>
+              <p className="text-xs text-gray-400">{c.members.toLocaleString('en-US')} members · {c.category} · {c.type}</p>
             </div>
             <div className="flex gap-2 shrink-0">
               <button onClick={() => toast.success(`Edit form opened for ${c.name}!`)} className="flex items-center gap-1 px-3 py-1.5 text-xs border border-white/10 text-gray-300 rounded-lg hover:bg-white/5 transition-all">

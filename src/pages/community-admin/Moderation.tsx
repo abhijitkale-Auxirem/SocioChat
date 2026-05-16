@@ -19,7 +19,7 @@ const SIDEBAR = [
 ];
 
 const REPORTS = [
-  { id: '1', reporter: 'User #2341', target: 'User #8892', reason: 'Posting spam links repeatedly', community: 'Tech India', time: '2 hours ago', severity: 'High' },
+  { id: '1', reporter: 'User #2341', target: 'User #8892', reason: 'Posting spam links repeatedly', community: 'Global Creators', time: '2 hours ago', severity: 'High' },
   { id: '2', reporter: 'User #4521', target: 'Post #1234', reason: 'Inappropriate content', community: 'Creative Hub', time: '4 hours ago', severity: 'Medium' },
   { id: '3', reporter: 'User #6789', target: 'User #3312', reason: 'Harassment in comments', community: 'Startup Network', time: 'Yesterday', severity: 'High' },
   { id: '4', reporter: 'User #1122', target: 'Post #5678', reason: 'Misinformation about health', community: 'Fitness First', time: 'Yesterday', severity: 'Medium' },

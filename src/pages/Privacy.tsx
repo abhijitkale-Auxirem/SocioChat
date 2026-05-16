@@ -6,10 +6,10 @@ import { fadeInUp, viewportOptions } from '@/lib/animations';
 const SECTIONS = [
   { title: '1. Information We Collect', content: 'We collect information you provide directly to us such as your name, email address, phone number, profile picture, and bio when you create an account. We also collect information about your use of our services, including messages (encrypted), community activity, and device information.' },
   { title: '2. How We Use Your Information', content: 'We use your information to provide, personalize, and improve our services; send notifications; facilitate connections between users; process payments; and comply with legal obligations. We do not sell your personal data to third parties.' },
-  { title: '3. Data Security', content: 'All one-to-one messages on SocioChat are end-to-end encrypted. We use industry-standard security measures including TLS encryption, secure data centers in India, and regular security audits to protect your information.' },
+  { title: '3. Data Security', content: 'All one-to-one messages on SocioChat are end-to-end encrypted. We use industry-standard security measures including TLS encryption, secure data centers worldwide, and regular security audits to protect your information.' },
   { title: '4. Data Retention', content: 'We retain your account information as long as your account is active. You may request deletion of your account and associated data at any time. Some data may be retained for legal compliance purposes for up to 90 days after deletion.' },
   { title: '5. Sharing of Information', content: 'We may share your information with other users as part of normal platform operation (e.g., your profile is visible to people you chat with). We share data with service providers who assist us in operating the platform, all under strict confidentiality agreements.' },
-  { title: '6. Your Rights', content: 'You have the right to access, correct, or delete your personal data. You may also object to certain processing, request data portability, and withdraw consent at any time. Contact us at privacy@sociochat.in for any privacy-related requests.' },
+  { title: '6. Your Rights', content: 'You have the right to access, correct, or delete your personal data. You may also object to certain processing, request data portability, and withdraw consent at any time. Contact us at privacy@sociochat.com for any privacy-related requests.' },
   { title: '7. Cookies', content: 'We use cookies and similar technologies to provide our services, analyze usage, and personalize content. You can control cookie preferences through your browser settings.' },
   { title: '8. Changes to This Policy', content: 'We may update this Privacy Policy periodically. We will notify you of significant changes via email or in-app notification. Continued use of SocioChat after changes constitutes acceptance of the updated policy.' },
 ];
@@ -40,7 +40,7 @@ export default function Privacy() {
               </motion.div>
             ))}
             <div className="mt-8 p-5 bg-indigo-400/10 border border-indigo-400/20 rounded-xl">
-              <p className="text-sm text-gray-300">For privacy-related inquiries, contact our Data Protection Officer at <a href="mailto:privacy@sociochat.in" className="text-indigo-400 hover:underline">privacy@sociochat.in</a></p>
+              <p className="text-sm text-gray-300">For privacy-related inquiries, contact our Data Protection Officer at <a href="mailto:privacy@sociochat.com" className="text-indigo-400 hover:underline">privacy@sociochat.com</a></p>
             </div>
           </div>
         </div>

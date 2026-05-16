@@ -25,7 +25,7 @@ export default function AdminAnalytics() {
     <DashboardLayout sidebarItems={SIDEBAR} title="Platform Analytics" roleLabel="Platform Admin">
       <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-6">
         <motion.div variants={fadeInUp} className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {[['4.92M', 'Total Users', 'text-indigo-400'], ['2.4M+', 'Daily Messages', 'text-cyan-400'], ['₹2.4Cr', 'Monthly Revenue', 'text-green-400'], ['99.9%', 'Platform Uptime', 'text-purple-400']].map(([v, l, c]) => (
+          {[['4.92M', 'Total Users', 'text-indigo-400'], ['2.4M+', 'Daily Messages', 'text-cyan-400'], ['$2.4M', 'Monthly Revenue', 'text-green-400'], ['99.9%', 'Platform Uptime', 'text-purple-400']].map(([v, l, c]) => (
             <div key={l} className="p-5 glass-dark rounded-2xl">
               <div className={`text-2xl font-bold font-['Space_Grotesk'] ${c}`}>{v}</div>
               <div className="text-xs text-gray-400 mt-1">{l}</div>
@@ -48,7 +48,7 @@ export default function AdminAnalytics() {
         <motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="glass-dark rounded-2xl p-5">
             <h3 className="text-base font-semibold text-white mb-4 font-['Space_Grotesk']">Revenue by Source</h3>
-            {[['Pro Subscriptions', '₹1.2Cr', 50], ['Creator Plans', '₹72L', 30], ['Enterprise', '₹48L', 20]].map(([s, a, p]) => (
+            {[['Pro Subscriptions', '$1.2M', 50], ['Creator Plans', '$720K', 30], ['Enterprise', '$480K', 20]].map(([s, a, p]) => (
               <div key={s as string} className="mb-4">
                 <div className="flex justify-between text-xs mb-1"><span className="text-gray-400">{s}</span><span className="text-green-400">{a}</span></div>
                 <div className="h-2 bg-white/10 rounded-full"><div className="h-full bg-gradient-to-r from-green-500 to-teal-600 rounded-full" style={{ width: `${p}%` }} /></div>
@@ -57,7 +57,7 @@ export default function AdminAnalytics() {
           </div>
           <div className="glass-dark rounded-2xl p-5">
             <h3 className="text-base font-semibold text-white mb-4 font-['Space_Grotesk']">Top States by Users</h3>
-            {[['Maharashtra', 28], ['Karnataka', 22], ['Tamil Nadu', 18], ['Delhi NCR', 15], ['Gujarat', 10]].map(([state, pct]) => (
+            {[['North America', 28], ['Europe', 22], ['Asia Pacific', 18], ['Latin America', 15], ['Africa', 10]].map(([state, pct]) => (
               <div key={state} className="mb-3">
                 <div className="flex justify-between text-xs mb-1"><span className="text-gray-400">{state}</span><span className="text-white">{pct}%</span></div>
                 <div className="h-1.5 bg-white/10 rounded-full"><div className="h-full gradient-primary rounded-full" style={{ width: `${pct}%` }} /></div>

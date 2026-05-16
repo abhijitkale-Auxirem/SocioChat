@@ -3,9 +3,9 @@ import { CheckCircle } from 'lucide-react';
 import { fadeInLeft, fadeInRight, viewportOptions } from '@/lib/animations';
 
 const CHAT_MESSAGES = [
-  { text: 'Hey! Just joined the Tech India community', self: false, name: 'Priya', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face' },
+  { text: 'Hey! Just joined the Global Tech community', self: false, name: 'Alex', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face' },
   { text: 'Welcome! You will love it here. We share amazing content daily.', self: true },
-  { text: 'Can you share the resource links?', self: false, name: 'Priya', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face' },
+  { text: 'Can you share the resource links?', self: false, name: 'Alex', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face' },
   { text: 'Sure! Dropping them in the community channel right now.', self: true },
 ];
 
@@ -17,7 +17,7 @@ export default function AppPreviewSection() {
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInLeft}>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-6">Live Chat Experience</span>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Chat That <span className="gradient-text">Feels Natural</span></h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">Experience real-time messaging with read receipts, typing indicators, message reactions, and seamless media sharing — all designed for India's fast-paced communication style.</p>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">Experience real-time messaging with read receipts, typing indicators, message reactions, and seamless media sharing — all designed for the world's fast-paced communication style.</p>
             {['End-to-end encrypted messages', 'Voice notes and media sharing', 'Group chats up to 500 members', 'Message reactions and replies'].map(f => (
               <div key={f} className="flex items-center gap-3 mb-3">
                 <CheckCircle className="w-5 h-5 text-indigo-400 shrink-0" />

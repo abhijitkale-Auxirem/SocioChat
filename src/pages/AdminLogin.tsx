@@ -40,7 +40,7 @@ export default function AdminLogin() {
         <div className="glass-dark rounded-3xl p-8 shadow-2xl">
           <div className="bg-indigo-400/10 border border-indigo-400/20 rounded-xl p-4 mb-6">
             <p className="text-xs text-indigo-400 font-medium">Demo Credentials</p>
-            <p className="text-xs text-gray-400 mt-1">Email: admin@sociochat.in</p>
+            <p className="text-xs text-gray-400 mt-1">Email: admin@sociochat.com</p>
             <p className="text-xs text-gray-400">Password: Admin@123</p>
           </div>
 
@@ -48,7 +48,7 @@ export default function AdminLogin() {
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Admin Email</label>
               <input type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
-                placeholder="admin@sociochat.in"
+                placeholder="admin@sociochat.com"
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all" />
             </div>
             <div>

@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { TrendingUp, IndianRupee, BadgeCheck, BarChart2, ArrowRight } from 'lucide-react';
+import { TrendingUp, DollarSign, BadgeCheck, BarChart2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fadeInLeft, fadeInRight, viewportOptions } from '@/lib/animations';
 
 const CREATOR_TOOLS = [
   { icon: BadgeCheck, label: 'Verified Creator Badge', color: 'text-indigo-400' },
-  { icon: IndianRupee, label: 'Monetization Tools', color: 'text-green-400' },
+  { icon: DollarSign, label: 'Monetization Tools', color: 'text-green-400' },
   { icon: BarChart2, label: 'Deep Analytics Dashboard', color: 'text-cyan-400' },
   { icon: TrendingUp, label: 'Audience Growth Insights', color: 'text-purple-400' },
 ];
@@ -25,7 +25,7 @@ export default function CreatorSection() {
                     <span className="text-sm font-semibold text-white">Monthly Earnings</span>
                     <span className="text-xs text-green-400">+28% this month</span>
                   </div>
-                  <div className="text-3xl font-bold text-white font-['Space_Grotesk']">₹84,500</div>
+                  <div className="text-3xl font-bold text-white font-['Space_Grotesk']">$84,500</div>
                   <div className="h-1.5 bg-white/10 rounded-full mt-3">
                     <div className="h-full w-3/4 gradient-primary rounded-full" />
                   </div>

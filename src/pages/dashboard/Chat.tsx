@@ -32,7 +32,7 @@ const INITIAL_MSGS: Message[] = [
   { text: 'I am doing great, thanks for asking!', self: true, time: '10:29 AM' },
   { text: 'Did you see the new features on SocioChat?', self: false, time: '10:30 AM' },
   { text: 'Yes! The communities section is amazing.', self: true, time: '10:31 AM' },
-  { text: 'Absolutely! We should join the Tech India community together.', self: false, time: '10:32 AM' },
+  { text: 'Absolutely! We should join the Tech World community together.', self: false, time: '10:32 AM' },
 ];
 
 interface ProfileModalProps {
@@ -115,7 +115,7 @@ export default function Chat() {
     const trimmed = text.trim();
     if (!trimmed) return;
     const now = new Date();
-    const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+    const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     const newMsg: Message = { text: trimmed, self: true, time: timeStr };
     setChatHistory(prev => ({
       ...prev,

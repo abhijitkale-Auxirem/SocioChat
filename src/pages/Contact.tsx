@@ -40,9 +40,9 @@ export default function Contact() {
             <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInLeft}>
               <h2 className="text-3xl font-bold text-white mb-8 font-['Space_Grotesk']">Contact Information</h2>
               {[
-                { icon: Mail, label: 'Email Us', value: 'hello@sociochat.in', sub: 'We reply within 24 hours', href: 'mailto:hello@sociochat.in' },
-                { icon: Phone, label: 'Call Us', value: '+91 80000 00000', sub: 'Mon-Fri, 9AM-6PM IST', href: 'tel:+918000000000' },
-                { icon: MapPin, label: 'Visit Us', value: '12th Floor, DLF Cyber City', sub: 'Gurugram, Haryana 122002', href: '#' },
+                { icon: Mail, label: 'Email Us', value: 'hello@sociochat.com', sub: 'We reply within 24 hours', href: 'mailto:hello@sociochat.com' },
+                { icon: Phone, label: 'Call Us', value: '+1 800 000 0000', sub: 'Mon-Fri, 9AM-6PM UTC', href: 'tel:+18000000000' },
+                { icon: MapPin, label: 'Visit Us', value: '12th Floor, Global Operations', sub: 'Worldwide Support Center', href: '#' },
               ].map(({ icon: Icon, label, value, sub, href }) => (
                 <a key={label} href={href} className="flex items-start gap-4 p-5 glass-dark rounded-2xl mb-4 hover:border-indigo-400/30 transition-all group">
                   <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center shrink-0">
@@ -74,7 +74,7 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold text-white mb-6 font-['Space_Grotesk']">Send a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
-                    {[{ label: 'Full Name *', key: 'name', type: 'text', placeholder: 'Priya Sharma' }, { label: 'Email *', key: 'email', type: 'email', placeholder: 'priya@example.com' }].map(({ label, key, type, placeholder }) => (
+                    {[{ label: 'Full Name *', key: 'name', type: 'text', placeholder: 'Alex Rivers' }, { label: 'Email *', key: 'email', type: 'email', placeholder: 'alex@example.com' }].map(({ label, key, type, placeholder }) => (
                       <div key={key}>
                         <label className="block text-sm font-medium text-gray-300 mb-2">{label}</label>
                         <input type={type} value={form[key as keyof typeof form]} onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}

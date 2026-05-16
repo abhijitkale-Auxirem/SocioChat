@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { LayoutDashboard, Users, BarChart2, TrendingUp, IndianRupee, Star, Settings, Rss, Check, Lock } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart2, TrendingUp, DollarSign, Star, Settings, Rss, Check, Lock } from 'lucide-react';
 import { getCurrentUser, updateUserProfile } from '@/lib/auth';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
@@ -10,7 +10,7 @@ const SIDEBAR = [
   { label: 'Overview', path: '/creator-dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
   { label: 'My Content', path: '/creator-dashboard/content', icon: <Rss className="w-4 h-4" /> },
   { label: 'Analytics', path: '/creator-dashboard/analytics', icon: <BarChart2 className="w-4 h-4" /> },
-  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <IndianRupee className="w-4 h-4" /> },
+  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <DollarSign className="w-4 h-4" /> },
   { label: 'Audience', path: '/creator-dashboard/audience', icon: <Users className="w-4 h-4" /> },
   { label: 'Growth Tools', path: '/creator-dashboard/growth', icon: <TrendingUp className="w-4 h-4" /> },
   { label: 'Verified Badge', path: '/creator-dashboard/verified', icon: <Star className="w-4 h-4" /> },
@@ -30,7 +30,7 @@ export default function CreatorGrowth() {
           <p className="text-sm text-gray-400 mb-5">Based on your engagement patterns and audience data.</p>
           {[
             { title: 'Post at peak hours', desc: 'Your audience is most active between 7PM-9PM IST. Schedule posts during this window for 40% more reach.', action: 'Schedule Post' },
-            { title: 'Use trending hashtags', desc: 'Add #TechIndia, #Startup2026, and #CreatorEconomy to boost discoverability by 25%.', action: 'Apply Now' },
+            { title: 'Use trending hashtags', desc: 'Add #CreatorEconomy, #CommunityGrowth, and #DigitalCreators to boost discoverability by 25%.', action: 'Apply Now' },
             { title: 'Go live this week', desc: 'Live sessions get 6x more engagement. Your audience expects content on weekends.', action: 'Schedule Live' },
           ].map(rec => (
             <div key={rec.title} className="flex items-start gap-4 py-4 border-b border-white/5 last:border-0">

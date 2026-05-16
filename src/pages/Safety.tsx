@@ -11,7 +11,7 @@ export default function Safety() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-green-400 font-medium mb-6">Safety Center</span>
             <h1 className="text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Your Safety is Our <span className="gradient-text">Priority</span></h1>
-            <p className="text-xl text-gray-400">We're committed to making SocioChat a safe space for everyone in India.</p>
+            <p className="text-xl text-gray-400">We're committed to making SocioChat a safe space for everyone around the world.</p>
           </motion.div>
         </div>
       </section>
@@ -22,7 +22,7 @@ export default function Safety() {
             { title: 'Report & Block', desc: 'Easily report any user or content that violates our community guidelines. Block any user to prevent them from contacting you.' },
             { title: 'Privacy Controls', desc: 'Control who can see your profile, send you messages, or add you to groups with our granular privacy settings.' },
             { title: 'Two-Factor Authentication', desc: 'Protect your account with 2FA using your phone number or authenticator app to prevent unauthorized access.' },
-            { title: 'Crisis Resources', desc: 'We partner with mental health organizations across India to provide support resources directly within the platform.' },
+            { title: 'Crisis Resources', desc: 'We partner with global mental health organizations to provide support resources directly within the platform.' },
           ].map((item, i) => (
             <div key={i} className="p-6 glass-dark rounded-2xl mb-4 hover:border-green-400/30 transition-all">
               <h3 className="text-lg font-semibold text-white mb-2 font-['Space_Grotesk']">{item.title}</h3>
@@ -31,7 +31,7 @@ export default function Safety() {
           ))}
           <div className="mt-8 p-6 glass-dark rounded-2xl text-center">
             <p className="text-gray-400 mb-4">Need to report an urgent safety issue?</p>
-            <a href="mailto:safety@sociochat.in" className="inline-block px-6 py-3 bg-green-500 text-white font-semibold rounded-xl text-sm hover:bg-green-600 transition-colors">safety@sociochat.in</a>
+            <a href="mailto:safety@sociochat.com" className="inline-block px-6 py-3 bg-green-500 text-white font-semibold rounded-xl text-sm hover:bg-green-600 transition-colors">safety@sociochat.com</a>
           </div>
         </div>
       </section>

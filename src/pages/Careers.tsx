@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function Careers() {
   const JOBS = [
-    { title: 'Senior React Developer', dept: 'Engineering', location: 'Gurugram / Remote', type: 'Full-time' },
+    { title: 'Senior React Developer', dept: 'Engineering', location: 'Global / Remote', type: 'Full-time' },
     { title: 'Product Designer (UI/UX)', dept: 'Design', location: 'Bangalore / Remote', type: 'Full-time' },
     { title: 'Community Growth Manager', dept: 'Marketing', location: 'Mumbai', type: 'Full-time' },
     { title: 'Backend Engineer (Node.js)', dept: 'Engineering', location: 'Remote', type: 'Full-time' },
@@ -20,8 +20,8 @@ export default function Careers() {
         <div className="max-w-4xl mx-auto px-4 text-center relative">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-6">Join Our Team</span>
-            <h1 className="text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Build the Future of <span className="gradient-text">Social India</span></h1>
-            <p className="text-xl text-gray-400 mb-8">We are a passionate team building India's most loved social platform. Come grow with us.</p>
+            <h1 className="text-5xl font-bold text-white mb-6 font-['Space_Grotesk']">Build the Future of <span className="gradient-text">Global Social</span></h1>
+            <p className="text-xl text-gray-400 mb-8">We are a passionate team building the world's most loved social platform. Come grow with us.</p>
             <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop" alt="Team" className="w-full h-64 object-cover rounded-2xl" />
           </motion.div>
         </div>

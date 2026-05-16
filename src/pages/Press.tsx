@@ -5,9 +5,9 @@ import { fadeInUp, staggerContainer, viewportOptions } from '@/lib/animations';
 
 export default function Press() {
   const MEDIA = [
-    { outlet: 'TechCrunch India', headline: 'SocioChat raises $12M Series A to build India\'s Discord', date: 'March 2026', logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=60&fit=crop' },
+    { outlet: 'TechCrunch', headline: 'SocioChat raises $12M Series A to build the global social platform', date: 'March 2026', logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=60&fit=crop' },
     { outlet: 'Economic Times', headline: 'SocioChat hits 5 million users in just 18 months', date: 'February 2026', logo: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100&h=60&fit=crop' },
-    { outlet: 'YourStory', headline: 'How SocioChat is redefining creator monetization in India', date: 'January 2026', logo: 'https://images.unsplash.com/photo-1546422904-90eab23c3d7e?w=100&h=60&fit=crop' },
+    { outlet: 'YourStory', headline: 'How SocioChat is redefining creator monetization worldwide', date: 'January 2026', logo: 'https://images.unsplash.com/photo-1546422904-90eab23c3d7e?w=100&h=60&fit=crop' },
   ];
   return (
     <div className="bg-[#070b18]">
@@ -37,7 +37,7 @@ export default function Press() {
           <div className="mt-10 p-6 glass-dark rounded-2xl text-center">
             <h3 className="text-xl font-bold text-white mb-3 font-['Space_Grotesk']">Media Inquiries</h3>
             <p className="text-gray-400 mb-4">For press inquiries, contact our communications team.</p>
-            <a href="mailto:press@sociochat.in" className="inline-block px-6 py-3 gradient-primary text-white font-semibold rounded-xl text-sm">press@sociochat.in</a>
+            <a href="mailto:press@sociochat.com" className="inline-block px-6 py-3 gradient-primary text-white font-semibold rounded-xl text-sm">press@sociochat.com</a>
           </div>
         </div>
       </section>

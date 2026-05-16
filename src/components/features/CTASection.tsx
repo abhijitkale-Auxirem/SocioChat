@@ -13,7 +13,7 @@ export default function CTASection() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp}>
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-['Space_Grotesk']">
-            Ready to Join <span className="gradient-text">4.9 Million</span> Indians?
+            Ready to Join <span className="gradient-text">4.9 Million</span> Users?
           </h2>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Start your journey on SocioChat today. Connect with communities, share your story, and build meaningful relationships.

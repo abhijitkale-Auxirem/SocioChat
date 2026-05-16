@@ -3,7 +3,7 @@ import { Users, MessageCircle, Globe, Star } from 'lucide-react';
 import { staggerContainer, fadeInUp, viewportOptions } from '@/lib/animations';
 
 const STATS = [
-  { icon: Users, label: 'Active Users', value: '4.9M+', sub: 'Across India', color: 'text-indigo-400', bg: 'from-indigo-500/20 to-indigo-600/5' },
+  { icon: Users, label: 'Active Users', value: '4.9M+', sub: 'Worldwide', color: 'text-indigo-400', bg: 'from-indigo-500/20 to-indigo-600/5' },
   { icon: MessageCircle, label: 'Messages Daily', value: '2.4M+', sub: 'Real-time delivery', color: 'text-cyan-400', bg: 'from-cyan-500/20 to-cyan-600/5' },
   { icon: Globe, label: 'Communities', value: '850K+', sub: 'Public & private', color: 'text-purple-400', bg: 'from-purple-500/20 to-purple-600/5' },
   { icon: Star, label: 'App Rating', value: '4.8/5', sub: 'On Play Store', color: 'text-yellow-400', bg: 'from-yellow-500/20 to-yellow-600/5' },

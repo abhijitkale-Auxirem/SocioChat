@@ -81,7 +81,7 @@ export default function Help() {
           <div className="mt-16 p-8 glass-dark rounded-2xl text-center">
             <h3 className="text-xl font-bold text-white mb-3 font-['Space_Grotesk']">Still Need Help?</h3>
             <p className="text-gray-400 mb-6">Our support team is available Monday to Friday, 9AM–6PM IST.</p>
-            <a href="mailto:support@sociochat.in" className="inline-flex items-center gap-2 px-6 py-3 gradient-primary text-white font-semibold rounded-xl text-sm shadow-lg shadow-indigo-500/30 hover:opacity-90 transition-all">
+            <a href="mailto:support@sociochat.com" className="inline-flex items-center gap-2 px-6 py-3 gradient-primary text-white font-semibold rounded-xl text-sm shadow-lg shadow-indigo-500/30 hover:opacity-90 transition-all">
               <MessageCircle className="w-4 h-4" /> Contact Support
             </a>
           </div>

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import {
@@ -6,6 +6,7 @@ import {
   Mail, Phone, MapPin, Zap, ArrowRight, MessageCircle,
   Shield, Globe, Heart, Send
 } from 'lucide-react';
+import { toast } from 'sonner';
 
 const FOOTER_LINKS = {
   Product: [
@@ -13,7 +14,7 @@ const FOOTER_LINKS = {
     { label: 'Pricing', path: '/pricing' },
     { label: 'Communities', path: '/communities' },
     { label: 'Creator Tools', path: '/features#creator' },
-    { label: 'Business', path: '/features#creator' },
+    { label: 'Business', path: '/business' },
   ],
   Company: [
     { label: 'About Us', path: '/about' },
@@ -23,10 +24,10 @@ const FOOTER_LINKS = {
     { label: 'Contact', path: '/contact' },
   ],
   Support: [
-    { label: 'Help Center', path: '/help' },
+    { label: 'Help Center', path: '/help-center' },
     { label: 'Community Guidelines', path: '/guidelines' },
     { label: 'Safety Center', path: '/safety' },
-    { label: 'Report a Problem', path: '/help#report' },
+    { label: 'Report a Problem', path: '/report' },
     { label: 'Status', path: '/status' },
   ],
   Legal: [
@@ -39,45 +40,61 @@ const FOOTER_LINKS = {
 };
 
 const SOCIAL = [
-  { Icon: Twitter, href: 'https://twitter.com/sociochat', label: 'Twitter', color: 'hover:bg-sky-500/20 hover:border-sky-400/40 hover:text-sky-400' },
-  { Icon: Instagram, href: 'https://instagram.com/sociochat', label: 'Instagram', color: 'hover:bg-pink-500/20 hover:border-pink-400/40 hover:text-pink-400' },
-  { Icon: Linkedin, href: 'https://linkedin.com/company/sociochat', label: 'LinkedIn', color: 'hover:bg-blue-500/20 hover:border-blue-400/40 hover:text-blue-400' },
-  { Icon: Youtube, href: 'https://youtube.com/sociochat', label: 'YouTube', color: 'hover:bg-red-500/20 hover:border-red-400/40 hover:text-red-400' },
-  { Icon: Facebook, href: 'https://facebook.com/sociochat', label: 'Facebook', color: 'hover:bg-blue-600/20 hover:border-blue-500/40 hover:text-blue-400' },
+  { Icon: Twitter, href: '#', label: 'Twitter', color: 'hover:bg-sky-500/20 hover:border-sky-400/40 hover:text-sky-400' },
+  { Icon: Instagram, href: '#', label: 'Instagram', color: 'hover:bg-pink-500/20 hover:border-pink-400/40 hover:text-pink-400' },
+  { Icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:bg-blue-500/20 hover:border-blue-400/40 hover:text-blue-400' },
+  { Icon: Youtube, href: '#', label: 'YouTube', color: 'hover:bg-red-500/20 hover:border-red-400/40 hover:text-red-400' },
+  { Icon: Facebook, href: '#', label: 'Facebook', color: 'hover:bg-blue-600/20 hover:border-blue-500/40 hover:text-blue-400' },
 ];
 
 const STATS = [
-  { value: '4.9M+', label: 'Active Users', icon: Globe },
+  { value: '5M+', label: 'Global Users', icon: Globe },
   { value: '850K+', label: 'Communities', icon: MessageCircle },
   { value: '99.9%', label: 'Uptime', icon: Shield },
-  { value: '₹84Cr+', label: 'Creator Earnings', icon: Heart },
-];
-
-const STORE_LINKS = [
-  { label: 'App Store', href: 'https://apps.apple.com/app/idYOUR_APP_ID' },
-  { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.sociochat' },
+  { value: '$100M+', label: 'Creator Payouts', icon: Heart },
 ];
 
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08 } },
 };
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 };
+
 const fadeLeft = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' as const } },
 };
 
 export default function Footer() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const cleanedEmail = email.trim().toLowerCase();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!cleanedEmail) {
+      toast.error('Please enter your email address.');
+      return;
+    }
+
+    if (!emailRegex.test(cleanedEmail)) {
+      toast.error('Enter a valid email to subscribe.');
+      return;
+    }
+
+    toast.success("You're subscribed! We'll keep you updated.");
+    setEmail('');
+  };
 
   return (
     <footer ref={ref} className="relative bg-[#050810] overflow-hidden">
-
       {/* Animated background grid */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -91,237 +108,131 @@ export default function Footer() {
 
       {/* Glow orbs */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-cyan-600/8 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Top border glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
 
-      {/* Newsletter CTA Band */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7 }}
-        className="relative border-b border-white/5"
-      >
+      {/* Newsletter Section */}
+      <div className="relative border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-white font-['Space_Grotesk']">
-                Stay in the <span className="gradient-text">Loop</span>
+                Stay in the <span className="text-indigo-400">Loop</span>
               </h3>
-              <p className="text-gray-400 text-sm mt-1">Get product updates, community news, and creator tips delivered weekly.</p>
+              <p className="text-gray-400 text-sm mt-1">Get product updates and creator tips delivered globally.</p>
             </div>
-            <div className="flex items-center gap-2 w-full lg:w-auto max-w-md lg:max-w-none">
-              <div className="relative flex-1 lg:w-72">
+            <form onSubmit={handleSubscribe} className="flex items-center gap-2 w-full lg:w-auto max-w-md">
+              <div className="relative flex-1">
                 <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                 <input
                   type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all"
+                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white focus:ring-2 focus:ring-indigo-400 outline-none"
                 />
               </div>
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-5 py-3 gradient-primary text-white text-sm font-semibold rounded-xl shadow-lg shadow-indigo-500/30 whitespace-nowrap"
-              >
-                <Send className="w-4 h-4" />
+              <button type="submit" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl transition-all shadow-lg shadow-indigo-500/20">
                 Subscribe
-              </motion.button>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Stats Row */}
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-        className="border-b border-white/5"
-      >
+      {/* Stats row */}
+      <div className="border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {STATS.map(({ value, label, icon: Icon }) => (
-              <motion.div key={label} variants={fadeUp} className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl gradient-primary/20 border border-indigo-400/20 flex items-center justify-center shrink-0 group-hover:border-indigo-400/50 transition-colors">
+              <div key={label} className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-indigo-400" />
                 </div>
                 <div>
-                  <div className="text-lg font-bold gradient-text font-['Space_Grotesk'] leading-none">{value}</div>
-                  <div className="text-xs text-gray-500 mt-0.5">{label}</div>
+                  <div className="text-lg font-bold text-white font-['Space_Grotesk']">{value}</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">{label}</div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-12">
-
-          {/* Brand Column */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            className="lg:col-span-2"
-          >
-            <Link to="/" className="flex items-center gap-2.5 mb-5 group">
-              <motion.div
-                className="w-11 h-11 rounded-xl gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/30"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 400 }}
-              >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Brand Info */}
+          <div className="lg:col-span-4 space-y-6">
+            <Link to="/" className="flex items-center gap-2.5">
+              <div className="w-11 h-11 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
                 <Zap className="w-6 h-6 text-white" />
-              </motion.div>
-              <div>
-                <span className="font-bold text-2xl text-white font-['Space_Grotesk']">Socio<span className="gradient-text">Chat</span></span>
-                <p className="text-[9px] text-indigo-400/60 tracking-widest uppercase font-medium">Connect. Create. Chat.</p>
               </div>
+              <span className="font-bold text-2xl text-white font-['Space_Grotesk']">SocioChat</span>
             </Link>
-
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              India's premier real-time social communication platform. Connect, collaborate, and create communities that matter.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+              The world's premier real-time social communication platform. Connect, collaborate, and create communities across the globe.
             </p>
-
-            <div className="space-y-3 mb-8">
-              {[
-                { Icon: Mail, text: 'hello@sociochat.in', href: 'mailto:hello@sociochat.in' },
-                { Icon: Phone, text: '+91 80000 00000', href: 'tel:+918000000000' },
-                { Icon: MapPin, text: 'Dharshiv, Maharashtra', href: null },
-              ].map(({ Icon, text, href }) => (
-                <motion.div key={text} whileHover={{ x: 4 }} className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-indigo-400/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Icon className="w-3.5 h-3.5 text-indigo-400" />
-                  </div>
-                  {href ? (
-                    <a href={href} className="text-sm text-gray-400 hover:text-indigo-400 transition-colors">{text}</a>
-                  ) : (
-                    <span className="text-sm text-gray-400">{text}</span>
-                  )}
-                </motion.div>
-              ))}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-sm text-gray-400">
+                <Mail className="w-4 h-4 text-indigo-400" /> hello@sociochat.com
+              </div>
+              <div className="flex items-center gap-3 text-sm text-gray-400">
+                <Globe className="w-4 h-4 text-indigo-400" /> Global Headquarters
+              </div>
             </div>
-
             {/* Social Icons */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex gap-2">
               {SOCIAL.map(({ Icon, href, label, color }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className={`w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-500 transition-all duration-300 ${color}`}
-                >
+                <a key={label} href={href} className={`w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all ${color}`}>
                   <Icon className="w-4 h-4" />
-                </motion.a>
+                </a>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Link Columns */}
-          {Object.entries(FOOTER_LINKS).map(([section, links], colIdx) => (
-            <motion.div
-              key={section}
-              variants={stagger}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              transition={{ delay: colIdx * 0.05 }}
-            >
-              <motion.h4 variants={fadeUp} className="text-white font-semibold mb-5 flex items-center gap-2 font-['Space_Grotesk']">
-                <span className="w-1.5 h-4 rounded-full gradient-primary inline-block" />
-                {section}
-              </motion.h4>
-              <ul className="space-y-2.5">
-                {links.map(link => (
-                  <motion.li key={link.label} variants={fadeLeft}>
-                    <Link
-                      to={link.path}
-                      className="group flex items-center gap-2 text-sm text-gray-400 hover:text-indigo-400 transition-all duration-200"
-                    >
-                      <motion.span
-                        className="w-0 h-px bg-indigo-400 rounded-full"
-                        initial={{ width: 0 }}
-                        whileHover={{ width: 8 }}
-                        transition={{ duration: 0.2 }}
-                      />
-                      {link.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* App download strip */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          transition={{ delay: 0.4 }}
-          className="mt-14 p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-4"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-white">Get SocioChat App</p>
-              <p className="text-xs text-gray-500">Available on all platforms</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            {STORE_LINKS.map(store => (
-              <motion.a
-                key={store.label}
-                href={store.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 px-4 py-2.5 glass rounded-xl text-sm text-gray-300 hover:text-white border border-white/10 hover:border-indigo-400/30 transition-all"
-              >
-                <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
-                {store.label}
-              </motion.a>
+
+          {/* Links Grid */}
+          <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {Object.entries(FOOTER_LINKS).map(([section, links]) => (
+              <div key={section}>
+                <h4 className="text-white font-semibold mb-5 font-['Space_Grotesk'] uppercase text-xs tracking-widest">{section}</h4>
+                <ul className="space-y-3">
+                  {links.map(link => (
+                    <li key={link.label}>
+                      <Link to={link.path} className="text-sm text-gray-400 hover:text-indigo-400 transition-colors">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
-        </motion.div>
+
+          {/* Official App Store Buttons Section */}
+          <div className="lg:col-span-3 space-y-5">
+            <p className="text-xs font-semibold text-white uppercase tracking-[0.2em]">Download SocioChat</p>
+            <div className="grid gap-4">
+              <a href="https://apps.apple.com/app/sociochat" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-white/10 bg-white/5 transition hover:border-indigo-400/30">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="w-full h-auto" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.sociochat" target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-white/10 bg-white/5 transition hover:border-indigo-400/30">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play" className="w-full h-auto" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative border-t border-white/5">
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isInView ? { scaleX: 1 } : {}}
-          transition={{ duration: 1.2, ease: 'easeOut', delay: 0.5 }}
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent origin-left"
-        />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="border-t border-white/5 bg-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500 flex items-center gap-1.5">
-            © 2026 SocioChat. Made with
-            <motion.span
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <Heart className="w-3 h-3 text-red-400 fill-red-400 inline" />
-            </motion.span>
-            in India. All rights reserved.
+            © 2026 SocioChat. Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> for the World.
           </p>
-          <div className="flex items-center gap-5">
-            {[{ label: 'Privacy', path: '/privacy' }, { label: 'Terms', path: '/terms' }, { label: 'Cookies', path: '/cookies' }].map(({ label, path }) => (
-              <Link key={label} to={path} className="text-xs text-gray-500 hover:text-indigo-400 transition-colors">
-                {label}
-              </Link>
+          <div className="flex gap-6">
+            {['Privacy', 'Terms', 'Cookies'].map(l => (
+              <Link key={l} to={`/${l.toLowerCase()}`} className="text-xs text-gray-500 hover:text-indigo-400 transition-colors">{l}</Link>
             ))}
-            <Link to="/admin-login" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
-              Admin
-            </Link>
           </div>
         </div>
       </div>

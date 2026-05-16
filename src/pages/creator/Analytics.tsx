@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { LayoutDashboard, Users, BarChart2, TrendingUp, IndianRupee, Star, Settings, Rss } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart2, TrendingUp, DollarSign, Star, Settings, Rss } from 'lucide-react';
 import { getCurrentUser } from '@/lib/auth';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
@@ -9,7 +9,7 @@ const SIDEBAR = [
   { label: 'Overview', path: '/creator-dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
   { label: 'My Content', path: '/creator-dashboard/content', icon: <Rss className="w-4 h-4" /> },
   { label: 'Analytics', path: '/creator-dashboard/analytics', icon: <BarChart2 className="w-4 h-4" /> },
-  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <IndianRupee className="w-4 h-4" /> },
+  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <DollarSign className="w-4 h-4" /> },
   { label: 'Audience', path: '/creator-dashboard/audience', icon: <Users className="w-4 h-4" /> },
   { label: 'Growth Tools', path: '/creator-dashboard/growth', icon: <TrendingUp className="w-4 h-4" /> },
   { label: 'Verified Badge', path: '/creator-dashboard/verified', icon: <Star className="w-4 h-4" /> },
@@ -54,7 +54,7 @@ export default function CreatorAnalytics() {
           <div className="glass-dark rounded-2xl p-5">
             <h3 className="text-base font-semibold text-white mb-4 font-['Space_Grotesk']">Top Performing Posts</h3>
             {[
-              { title: 'AI Tools for Indian Creators', reach: '245K', engagement: '12.4%' },
+              { title: 'AI Tools for Global Creators', reach: '245K', engagement: '12.4%' },
               { title: 'Building 1000 True Fans', reach: '189K', engagement: '9.8%' },
               { title: 'Monetize in 2026', reach: '156K', engagement: '8.2%' },
             ].map(p => (

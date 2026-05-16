@@ -29,14 +29,31 @@ interface ToggleRowProps {
 
 function ToggleRow({ label, value, onChange }: ToggleRowProps) {
   return (
-    <div className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
-      <span className="text-sm text-gray-300">{label}</span>
+    <div className="flex items-center justify-between py-4 border-b border-white/5 last:border-0">
+      <span className="text-sm font-medium text-gray-300">{label}</span>
+      
+      {/* 3D Toggle Switch */}
       <button
         onClick={onChange}
-        className={`relative w-11 h-6 rounded-full transition-colors duration-200 shrink-0 ${value ? 'bg-indigo-500' : 'bg-gray-700'}`}
+        className={`relative w-16 h-8 rounded-full p-1 transition-all duration-300 shadow-inner flex items-center ${
+          value 
+            ? 'bg-green-600 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]' 
+            : 'bg-red-600 shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]'
+        }`}
       >
-        <span
-          className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-transform duration-200 ${value ? 'translate-x-6' : 'translate-x-1'}`}
+        {/* ON/OFF Text Labels */}
+        <span className={`absolute text-[10px] font-bold text-white transition-opacity duration-200 ${value ? 'left-2 opacity-100' : 'left-2 opacity-0'}`}>
+          ON
+        </span>
+        <span className={`absolute text-[10px] font-bold text-white transition-opacity duration-200 ${value ? 'right-2 opacity-0' : 'right-2 opacity-100'}`}>
+          OFF
+        </span>
+
+        {/* Sliding Knob */}
+        <motion.div
+          animate={{ x: value ? 32 : 0 }}
+          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+          className="z-10 w-6 h-6 bg-gradient-to-b from-white to-gray-200 rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
         />
       </button>
     </div>

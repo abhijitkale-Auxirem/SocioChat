@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { LayoutDashboard, Users, BarChart2, TrendingUp, IndianRupee, Star, Settings, Rss, BadgeCheck } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart2, TrendingUp, DollarSign, Star, Settings, Rss, BadgeCheck } from 'lucide-react';
 import { getCurrentUser } from '@/lib/auth';
 import { motion } from 'framer-motion';
 import { fadeInUp } from '@/lib/animations';
@@ -10,7 +10,7 @@ const SIDEBAR = [
   { label: 'Overview', path: '/creator-dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
   { label: 'My Content', path: '/creator-dashboard/content', icon: <Rss className="w-4 h-4" /> },
   { label: 'Analytics', path: '/creator-dashboard/analytics', icon: <BarChart2 className="w-4 h-4" /> },
-  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <IndianRupee className="w-4 h-4" /> },
+  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <DollarSign className="w-4 h-4" /> },
   { label: 'Audience', path: '/creator-dashboard/audience', icon: <Users className="w-4 h-4" /> },
   { label: 'Growth Tools', path: '/creator-dashboard/growth', icon: <TrendingUp className="w-4 h-4" /> },
   { label: 'Verified Badge', path: '/creator-dashboard/verified', icon: <Star className="w-4 h-4" /> },

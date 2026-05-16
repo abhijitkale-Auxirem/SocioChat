@@ -80,7 +80,7 @@ export default function Profile() {
               <h2 className="text-xl font-bold text-white font-['Space_Grotesk']">{user.name}</h2>
               <p className="text-sm text-indigo-400 capitalize">{user.role.replace('_', ' ')}</p>
               <p className="text-xs text-gray-500 mt-1">
-                Member since {new Date(user.joinedAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}
+                Member since {new Date(user.joinedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
               </p>
               <p className="text-xs text-gray-600 mt-1">Click the camera icon to upload a photo from your device</p>
             </div>

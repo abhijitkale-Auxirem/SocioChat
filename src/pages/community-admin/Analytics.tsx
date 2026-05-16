@@ -46,7 +46,7 @@ export default function CommunityAnalytics() {
         <motion.div variants={fadeInUp} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="glass-dark rounded-2xl p-5">
             <h3 className="text-base font-semibold text-white mb-4 font-['Space_Grotesk']">Top Communities</h3>
-            {[['Tech India', '45,200', 92], ['Startup Network', '23,100', 78], ['Creative Hub', '18,500', 65]].map(([n, m, p]) => (
+            {[['Global Connect', '45,200', 92], ['Startup Network', '23,100', 78], ['Creative Hub', '18,500', 65]].map(([n, m, p]) => (
               <div key={n} className="mb-4">
                 <div className="flex justify-between text-xs mb-1"><span className="text-gray-300">{n}</span><span className="text-gray-400">{m} members</span></div>
                 <div className="h-2 bg-white/10 rounded-full"><div className="h-full gradient-primary rounded-full" style={{ width: `${p}%` }} /></div>

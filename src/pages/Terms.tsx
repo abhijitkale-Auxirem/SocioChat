@@ -9,7 +9,7 @@ const SECTIONS = [
   { title: '3. Acceptable Use', content: 'You agree not to use SocioChat to harass, threaten, or harm others; share illegal content; spread misinformation; engage in spam or phishing; violate others\' intellectual property rights; or engage in any illegal activity.' },
   { title: '4. Content Ownership', content: 'You retain ownership of content you create and share on SocioChat. By posting content, you grant SocioChat a non-exclusive, royalty-free license to use, display, and distribute your content within the platform. You are responsible for ensuring you have the rights to share any content.' },
   { title: '5. Privacy', content: 'Your use of SocioChat is governed by our Privacy Policy, which is incorporated into these Terms of Service by reference. Please review our Privacy Policy to understand our practices.' },
-  { title: '6. Monetization & Payments', content: 'Creator earnings are subject to our monetization policy. SocioChat charges a 20% platform fee on all monetized content and community revenues. Payments are processed through secure Indian payment gateways and disbursed weekly.' },
+  { title: '6. Monetization & Payments', content: 'Creator earnings are subject to our monetization policy. SocioChat charges a 20% platform fee on all monetized content and community revenues. Payments are processed through secure global payment gateways and disbursed weekly.' },
   { title: '7. Termination', content: 'SocioChat reserves the right to suspend or terminate accounts that violate these terms. Users may also delete their accounts at any time through account settings. Upon termination, your access to the platform will cease immediately.' },
   { title: '8. Limitation of Liability', content: 'SocioChat is provided "as is" without warranties. We are not liable for any indirect, incidental, or consequential damages arising from your use of the platform. Our total liability is limited to the fees paid in the 3 months preceding the claim.' },
 ];
@@ -39,7 +39,7 @@ export default function Terms() {
               </motion.div>
             ))}
             <div className="mt-8 p-5 bg-indigo-400/10 border border-indigo-400/20 rounded-xl">
-              <p className="text-sm text-gray-300">Questions about our terms? Contact us at <a href="mailto:legal@sociochat.in" className="text-indigo-400 hover:underline">legal@sociochat.in</a></p>
+              <p className="text-sm text-gray-300">Questions about our terms? Contact us at <a href="mailto:legal@sociochat.com" className="text-indigo-400 hover:underline">legal@sociochat.com</a></p>
             </div>
           </div>
         </div>

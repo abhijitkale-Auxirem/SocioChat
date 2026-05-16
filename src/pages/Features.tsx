@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { staggerContainer, fadeInUp, viewportOptions } from '@/lib/animations';
-import { MessageCircle, Video, Users, Share2, Shield, Zap, BarChart2, Bell, Lock, Globe, Mic, FileText, Image, Gift, Star, TrendingUp, IndianRupee, BadgeCheck } from 'lucide-react';
+import { MessageCircle, Video, Users, Share2, Shield, Zap, BarChart2, Bell, Lock, Globe, Mic, FileText, Image, Gift, Star, TrendingUp, DollarSign, BadgeCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const FEATURE_CATEGORIES = [
   {
     id: 'messaging', title: 'Messaging & Communication', color: 'from-indigo-500 to-purple-600',
     features: [
-      { icon: MessageCircle, name: 'Real-Time Chat', desc: 'Instant one-to-one and group messaging with sub-second delivery across India.' },
+      { icon: MessageCircle, name: 'Real-Time Chat', desc: 'Instant one-to-one and group messaging with sub-second delivery across global communities.' },
       { icon: Video, name: 'Video & Audio Calls', desc: 'HD video calls, group calling up to 50 participants, and screen sharing.' },
       { icon: Mic, name: 'Voice Notes', desc: 'Send voice messages up to 5 minutes for quick, personal communication.' },
       { icon: FileText, name: 'File Sharing', desc: 'Share documents, PDFs, and files up to 100MB securely within chats.' },
@@ -32,7 +32,7 @@ const FEATURE_CATEGORIES = [
     id: 'creator', title: 'Creator & Business Tools', color: 'from-purple-500 to-pink-600',
     features: [
       { icon: BadgeCheck, name: 'Verified Badge', desc: 'Gain trust with a verified creator badge on your profile and content.' },
-      { icon: IndianRupee, name: 'Monetization', desc: 'Earn through paid communities, tipping, sponsored posts, and subscriptions.' },
+      { icon: DollarSign, name: 'Monetization', desc: 'Earn through paid communities, tipping, sponsored posts, and subscriptions.' },
       { icon: BarChart2, name: 'Creator Analytics', desc: 'Deep insights into reach, engagement rate, follower growth, and earnings.' },
       { icon: TrendingUp, name: 'Audience Growth Tools', desc: 'AI-powered suggestions to grow your audience faster and smarter.' },
       { icon: Share2, name: 'Content Scheduling', desc: 'Plan and schedule posts, stories, and announcements in advance.' },
@@ -52,7 +52,7 @@ export default function Features() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-6">Platform Features</span>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 font-['Space_Grotesk']">Every Tool You Need to <span className="gradient-text">Connect & Grow</span></h1>
-            <p className="text-xl text-gray-400 leading-relaxed">Messaging, communities, creator tools, analytics — SocioChat has everything India's digital creators and communities need.</p>
+            <p className="text-xl text-gray-400 leading-relaxed">Messaging, communities, creator tools, analytics — SocioChat has everything modern digital creators and communities need.</p>
           </motion.div>
         </div>
       </section>

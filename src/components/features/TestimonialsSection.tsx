@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-cyan-400 font-medium mb-4">Testimonials</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-['Space_Grotesk']">What Our <span className="gradient-text">Community Says</span></h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Trusted by millions of users across India. Here's what they have to say about SocioChat.</p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Trusted by millions of users worldwide. Here's what they have to say about SocioChat.</p>
         </motion.div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={staggerContainer}

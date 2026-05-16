@@ -26,7 +26,7 @@ export default function AdminOverview() {
     { label: 'Communities', value: '850,200', color: 'from-cyan-500 to-blue-600', path: '/admin/communities' },
     { label: 'Active Today', value: '284,300', color: 'from-green-500 to-teal-600', path: '/admin/analytics' },
     { label: 'Pending Reports', value: '142', color: 'from-orange-500 to-red-600', path: '/admin/reports' },
-    { label: 'Monthly Revenue', value: '₹2.4Cr', color: 'from-purple-500 to-pink-600', path: '/admin/analytics' },
+    { label: 'Monthly Revenue', value: '$2.4M', color: 'from-purple-500 to-pink-600', path: '/admin/analytics' },
     { label: 'Security Alerts', value: '3', color: 'from-red-500 to-rose-600', path: '/admin/security' },
   ];
 

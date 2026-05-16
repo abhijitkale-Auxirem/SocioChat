@@ -20,7 +20,7 @@ const Particle = ({ style }: { style: React.CSSProperties }) => (
     className="absolute w-1 h-1 rounded-full bg-indigo-400/60"
     style={style}
     animate={{ y: [0, -12, 0], opacity: [0.3, 1, 0.3], scale: [1, 1.5, 1] }}
-    transition={{ duration: 2.5 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 2 }}
+    transition={{ duration: 2.5 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut' as const, delay: Math.random() * 2 }}
   />
 );
 
@@ -90,7 +90,7 @@ export default function Navbar() {
           background: 'linear-gradient(90deg, transparent, #4F46E5, #06B6D4, #8B5CF6, transparent)',
         }}
         animate={{ backgroundPosition: ['0% 0%', '100% 0%', '0% 0%'] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'linear' as const }}
       />
 
       {/* Floating particles when not scrolled */}
@@ -276,10 +276,66 @@ export default function Navbar() {
   to="/register"
   className="px-5 py-2 text-sm font-semibold text-white transition-transform duration-300 hover:scale-105 active:scale-95"
 >
-  <span className="flex items-center gap-1.5">
-    <Sparkles className="w-3.5 h-3.5" />
-    Get Started
-  </span>
+
+
+{/*  get Start Animation */}
+<motion.button
+      // Floating animation (active even when not hovered)
+      animate={{ y: [0, -4, 0] }}
+      transition={{ 
+        duration: 4, 
+        repeat: Infinity, 
+        ease: 'easeInOut' as const 
+      }}
+      whileHover="hover"
+      whileTap="tap"
+      className="group relative px-6 py-3 rounded-xl bg-indigo-600 overflow-hidden shadow-lg shadow-indigo-500/20"
+    >
+      {/* 1. Animated Shimmer Background */}
+      <motion.div
+        variants={{
+          hover: { x: '100%' }
+        }}
+        initial={{ x: '-100%' }}
+        transition={{ duration: 0.6, ease: 'linear' as const }}
+        className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+      />
+
+      <div className="relative z-10 flex items-center justify-center gap-2 text-white">
+        {/* 2. Sparkle Icon with Jiggle & Glow */}
+        <motion.div
+          variants={{
+            hover: { 
+              rotate: [0, -20, 20, -20, 0],
+              scale: 1.3,
+              filter: "drop-shadow(0 0 8px rgba(255,255,255,0.8))"
+            }
+          }}
+        >
+          <Sparkles className="w-4 h-4 fill-white/20" />
+        </motion.div>
+
+        {/* 3. Text with Character Stagger or Subtle Lift */}
+        <motion.span
+          variants={{
+            hover: { y: -1, scale: 1.02 },
+            tap: { scale: 0.95 }
+          }}
+          className="font-semibold tracking-tight"
+        >
+          Get Started
+        </motion.span>
+      </div>
+
+      {/* 4. Outer Glow Ring on Hover */}
+      <motion.div
+        variants={{
+          hover: { opacity: 1, scale: 1.1 }
+        }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        className="absolute inset-0 border border-indigo-400/50 rounded-xl pointer-events-none"
+      />
+    </motion.button>
 </Link>
                 </div>
               </div>

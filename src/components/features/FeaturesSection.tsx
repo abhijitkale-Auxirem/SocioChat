@@ -20,7 +20,7 @@ export default function FeaturesSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-4">Platform Features</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-['Space_Grotesk']">Everything You Need to <span className="gradient-text">Connect</span></h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">A complete suite of communication and community tools built for India's digital generation.</p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">A complete suite of communication and community tools built for today’s global creators.</p>
         </motion.div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={staggerContainer}

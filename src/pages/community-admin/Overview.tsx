@@ -52,7 +52,7 @@ export default function CommunityAdminOverview() {
                 <img src={c.image} alt={c.name} className="w-12 h-10 object-cover rounded-lg shrink-0" />
                 <div className="flex-1">
                   <p className="text-sm font-medium text-white">{c.name}</p>
-                  <p className="text-xs text-gray-400">{c.members.toLocaleString('en-IN')} members · {c.type}</p>
+                  <p className="text-xs text-gray-400">{c.members.toLocaleString('en-US')} members · {c.type}</p>
                 </div>
                 <span className="text-xs text-green-400">Active</span>
               </div>
@@ -66,7 +66,7 @@ export default function CommunityAdminOverview() {
             <h3 className="text-base font-semibold text-white font-['Space_Grotesk']">Pending Reports</h3>
           </div>
           {[
-            { reporter: 'User #1234', reason: 'Spam content in Tech India', time: '2 hours ago' },
+            { reporter: 'User #1234', reason: 'Spam content in a popular community', time: '2 hours ago' },
             { reporter: 'User #5678', reason: 'Inappropriate language', time: '4 hours ago' },
           ].map((r, i) => (
             <div key={i} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">

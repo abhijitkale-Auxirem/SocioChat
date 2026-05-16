@@ -8,11 +8,11 @@ export default function PricingSection() {
   return (
     <section className="py-24 bg-[#070b18]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
+        {/* <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-purple-400 font-medium mb-4">Simple Pricing</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-['Space_Grotesk']">Plans for <span className="gradient-text">Every Creator</span></h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">Start free, scale as you grow. All plans include core messaging and community features.</p>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -28,7 +28,7 @@ export default function PricingSection() {
                 <h3 className="text-2xl font-bold text-white mb-2 font-['Space_Grotesk']">{plan.name}</h3>
                 <div className="flex items-end gap-2">
                   <span className="text-5xl font-bold text-white font-['Space_Grotesk']">
-                    {plan.price === 0 ? 'Free' : `₹${plan.price}`}
+                    {plan.price === 0 ? 'Free' : `$${plan.price}`}
                   </span>
                   {plan.price > 0 && <span className="text-gray-300 mb-1">/{plan.period}</span>}
                 </div>

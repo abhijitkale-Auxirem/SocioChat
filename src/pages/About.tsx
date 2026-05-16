@@ -7,18 +7,11 @@ import { Link } from 'react-router-dom';
 import { MOCK_TESTIMONIALS } from '@/lib/mockData';
 import { Star } from 'lucide-react';
 
-const TEAM = [
-  { name: 'Rahul Gupta', role: 'CEO & Co-Founder', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face', bio: 'Ex-Google, IIT Delhi' },
-  { name: 'Neha Sharma', role: 'CTO & Co-Founder', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face', bio: 'Ex-Microsoft, BITS Pilani' },
-  { name: 'Arjun Nair', role: 'Chief Product Officer', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face', bio: 'Ex-Meta, IIM Ahmedabad' },
-  { name: 'Priya Joshi', role: 'Head of Design', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face', bio: 'Ex-Zomato, NID Ahmedabad' },
-];
-
 const VALUES = [
   { icon: Heart, title: 'Community First', desc: 'Every decision we make puts our community at the center. People are the heart of SocioChat.', color: 'from-pink-500 to-rose-600' },
   { icon: Shield, title: 'Privacy & Safety', desc: 'We are deeply committed to protecting user privacy and maintaining a safe, inclusive platform.', color: 'from-green-500 to-teal-600' },
-  { icon: Lightbulb, title: 'Constant Innovation', desc: 'We relentlessly pursue new features and improvements to serve India\'s digital generation.', color: 'from-yellow-500 to-orange-600' },
-  { icon: Target, title: 'Impact at Scale', desc: 'Our mission is to empower millions of Indians through meaningful digital connections.', color: 'from-indigo-500 to-purple-600' },
+  { icon: Lightbulb, title: 'Constant Innovation', desc: 'We relentlessly pursue new features and improvements to serve the global digital generation.', color: 'from-yellow-500 to-orange-600' },
+  { icon: Target, title: 'Impact at Scale', desc: 'Our mission is to empower millions through meaningful digital connections.', color: 'from-indigo-500 to-purple-600' },
 ];
 
 export default function About() {
@@ -31,8 +24,8 @@ export default function About() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-6">About SocioChat</span>
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 font-['Space_Grotesk']">Building India's <span className="gradient-text">Social Future</span></h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">We are on a mission to connect every Indian through meaningful conversations, thriving communities, and powerful creator tools — all in one platform.</p>
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 font-['Space_Grotesk']">Building the World's <span className="gradient-text">Social Future</span></h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">We are on a mission to connect everyone through meaningful conversations, thriving communities, and powerful creator tools — all in one platform.</p>
           </motion.div>
         </div>
       </section>
@@ -42,14 +35,14 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInLeft}>
               <h2 className="text-4xl font-bold text-white mb-6 font-['Space_Grotesk']">Our <span className="gradient-text">Vision</span></h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-6">Founded in 2023 by a team of passionate engineers and designers from India's top tech companies, SocioChat was born from a simple belief: that every Indian deserves a world-class platform to connect, communicate, and collaborate.</p>
-              <p className="text-gray-400 leading-relaxed mb-6">We combine the best of Discord's community tools, Telegram's messaging power, and Instagram's content sharing — but built specifically for India's unique digital landscape, with local language support, Indian payment systems, and culturally relevant features.</p>
+              <p className="text-gray-400 text-lg leading-relaxed mb-6">Founded in 2023 by a team of passionate engineers and designers from top global tech companies, SocioChat was born from a simple belief: that everyone deserves a world-class platform to connect, communicate, and collaborate.</p>
+              <p className="text-gray-400 leading-relaxed mb-6">We combine the best of Discord's community tools, Telegram's messaging power, and Instagram's content sharing — but built for the global digital generation, with multi-language support and culturally relevant features.</p>
               <Link to="/features" className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
                 Explore Features <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInRight} className="grid grid-cols-2 gap-4">
-              {[['2023', 'Founded'], ['4.9M+', 'Active Users'], ['₹84Cr+', 'Creator Earnings'], ['99.9%', 'Uptime SLA']].map(([num, label]) => (
+              {[['2023', 'Founded'], ['4.9M+', 'Active Users'], ['$11M+', 'Creator Earnings'], ['99.9%', 'Uptime SLA']].map(([num, label]) => (
                 <div key={label} className="p-6 glass-dark rounded-2xl text-center hover:-translate-y-2 transition-all duration-300">
                   <div className="text-4xl font-bold gradient-text mb-2 font-['Space_Grotesk']">{num}</div>
                   <div className="text-sm text-gray-400">{label}</div>
@@ -64,7 +57,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Why Choose <span className="gradient-text">SocioChat?</span></h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Built for India, by Indians. Here's what sets us apart from every other social platform.</p>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Built for the world, by global innovators. Here's what sets us apart from every other social platform.</p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {VALUES.map(({ icon: Icon, title, desc, color }) => (
@@ -81,26 +74,6 @@ export default function About() {
       </section>
 
       <section className="py-20 bg-[#0a0e1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">Meet the <span className="gradient-text">Leadership Team</span></h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={staggerContainer} className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {TEAM.map(m => (
-              <motion.div key={m.name} variants={fadeInUp} className="text-center group">
-                <div className="relative inline-block mb-4">
-                  <img src={m.avatar} alt={m.name} className="w-24 h-24 rounded-2xl object-cover border-2 border-white/10 group-hover:border-indigo-400/50 transition-all duration-300 mx-auto" />
-                </div>
-                <h3 className="text-base font-semibold text-white font-['Space_Grotesk']">{m.name}</h3>
-                <p className="text-sm text-indigo-400">{m.role}</p>
-                <p className="text-xs text-gray-500 mt-1">{m.bio}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#070b18]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOptions} variants={fadeInUp} className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4 font-['Space_Grotesk']">What Our Users <span className="gradient-text">Are Saying</span></h2>

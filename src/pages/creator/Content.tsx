@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { LayoutDashboard, Users, BarChart2, TrendingUp, IndianRupee, Star, Settings, Rss, Eye, Heart, Share2, Plus, Trash2, Edit2 } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart2, TrendingUp, DollarSign, Star, Settings, Rss, Eye, Heart, Share2, Plus, Trash2, Edit2 } from 'lucide-react';
 import { getCurrentUser } from '@/lib/auth';
 import { MOCK_POSTS } from '@/lib/mockData';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ const SIDEBAR = [
   { label: 'Overview', path: '/creator-dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
   { label: 'My Content', path: '/creator-dashboard/content', icon: <Rss className="w-4 h-4" /> },
   { label: 'Analytics', path: '/creator-dashboard/analytics', icon: <BarChart2 className="w-4 h-4" /> },
-  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <IndianRupee className="w-4 h-4" /> },
+  { label: 'Monetization', path: '/creator-dashboard/monetization', icon: <DollarSign className="w-4 h-4" /> },
   { label: 'Audience', path: '/creator-dashboard/audience', icon: <Users className="w-4 h-4" /> },
   { label: 'Growth Tools', path: '/creator-dashboard/growth', icon: <TrendingUp className="w-4 h-4" /> },
   { label: 'Verified Badge', path: '/creator-dashboard/verified', icon: <Star className="w-4 h-4" /> },
@@ -46,7 +46,7 @@ export default function CreatorContent() {
               <div className="flex-1 min-w-0">
                 <p className="text-sm text-gray-300 mb-3 line-clamp-2">{post.content}</p>
                 <div className="flex items-center gap-4 text-xs text-gray-500">
-                  <span className="flex items-center gap-1"><Eye className="w-3 h-3" /> {(post.likes * 12).toLocaleString('en-IN')}</span>
+                  <span className="flex items-center gap-1"><Eye className="w-3 h-3" /> {(post.likes * 12).toLocaleString('en-US')}</span>
                   <span className="flex items-center gap-1"><Heart className="w-3 h-3" /> {post.likes}</span>
                   <span className="flex items-center gap-1"><Share2 className="w-3 h-3" /> {post.shares}</span>
                   <span>{post.time}</span>

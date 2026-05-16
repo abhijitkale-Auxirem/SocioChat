@@ -19,7 +19,7 @@ export interface RegisteredUser extends AuthUser {
 const USERS_KEY = 'sociochat_users';
 const CURRENT_USER_KEY = 'sociochat_current_user';
 
-const INDIAN_AVATARS = [
+const GLOBAL_AVATARS = [
   'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&h=150&fit=crop&crop=face',
   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face',
   'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face',
@@ -50,7 +50,7 @@ export function registerUser(data: {
     password: data.password,
     role: data.role,
     phone: data.phone,
-    avatar: INDIAN_AVATARS[Math.floor(Math.random() * INDIAN_AVATARS.length)],
+    avatar: GLOBAL_AVATARS[Math.floor(Math.random() * GLOBAL_AVATARS.length)],
     bio: '',
     joinedAt: new Date().toISOString(),
     verified: false,
@@ -70,11 +70,11 @@ export function loginUser(email: string, password: string): { success: boolean; 
 }
 
 export function loginAdmin(email: string, password: string): { success: boolean; message: string } {
-  if (email === 'admin@sociochat.in' && password === 'Admin@123') {
+  if (email === 'admin@sociochat.com' && password === 'Admin@123') {
     const admin = {
       id: 'admin_001', name: 'Admin User', email, role: 'admin',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-      bio: 'Platform Administrator', phone: '+91 9000000000', joinedAt: '2024-01-01', verified: true,
+      bio: 'Platform Administrator', phone: '+1 9000000000', joinedAt: '2024-01-01', verified: true,
     };
     localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(admin));
     return { success: true, message: 'Admin login successful!' };

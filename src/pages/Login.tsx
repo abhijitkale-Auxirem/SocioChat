@@ -13,10 +13,22 @@ export default function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.email || !form.password) { toast.error('Please fill in all fields.'); return; }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!form.email || !form.password) {
+      toast.error('Please fill in all fields.');
+      return;
+    }
+    if (!emailRegex.test(form.email.trim())) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    if (form.password.length < 8) {
+      toast.error('Password must be at least 8 characters.');
+      return;
+    }
     setLoading(true);
     await new Promise(r => setTimeout(r, 600));
-    const result = loginUser(form.email, form.password);
+    const result = loginUser(form.email.trim().toLowerCase(), form.password);
     setLoading(false);
     if (result.success && result.user) {
       toast.success(result.message);
@@ -26,8 +38,8 @@ export default function Login() {
     }
   };
 
-        return (
-          <div className="min-h-screen flex bg-[#070b18]" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
+  return (
+    <div className="min-h-screen flex bg-[#070b18]" style={{ backgroundImage: "url('/assets/auth-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-[#070b18]/80 backdrop-blur-sm" />
       <div className="relative w-full flex items-center justify-center px-4 py-12">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
@@ -73,7 +85,7 @@ export default function Login() {
               <Link to="/register" className="text-indigo-400 hover:text-indigo-300 font-medium">Create one free</Link>
             </p>
             <p className="text-center mt-2">
-              <Link to="/admin-login" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Admin Login</Link>
+              <a href="https://apps.apple.com/app/sociochat" target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors">Download on App Store</a> | <a href="https://play.google.com/store/apps/details?id=com.sociochat" target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors">Get on Google Play</a>
             </p>
           </div>
         </motion.div>

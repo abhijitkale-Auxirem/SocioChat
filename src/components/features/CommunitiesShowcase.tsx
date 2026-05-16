@@ -12,7 +12,7 @@ export default function CommunitiesShowcase() {
           <div>
             <span className="inline-block px-4 py-1.5 glass rounded-full text-sm text-indigo-400 font-medium mb-4">Discover</span>
             <h2 className="text-4xl lg:text-5xl font-bold text-white font-['Space_Grotesk']">Trending <span className="gradient-text">Communities</span></h2>
-            <p className="text-gray-400 text-lg mt-3 max-w-xl">Join thousands of thriving communities across India. Find your tribe today.</p>
+            <p className="text-gray-400 text-lg mt-3 max-w-xl">Join thousands of thriving communities worldwide. Find your tribe today.</p>
           </div>
           <Link to="/communities" className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium transition-colors shrink-0">
             View All Communities <ArrowRight className="w-4 h-4" />
@@ -39,7 +39,7 @@ export default function CommunitiesShowcase() {
                 <h3 className="text-lg font-semibold text-white mb-2 font-['Space_Grotesk'] group-hover:text-indigo-400 transition-colors">{community.name}</h3>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <Users className="w-4 h-4" /> {community.members.toLocaleString('en-IN')} members
+                    <Users className="w-4 h-4" /> {community.members.toLocaleString('en-US')} members
                   </div>
                   <Link to="/register" className="text-xs text-indigo-400 hover:text-indigo-300 font-medium">Join Now</Link>
                 </div>
